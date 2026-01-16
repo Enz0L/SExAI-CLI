@@ -1,9 +1,0 @@
-.venv
-.env
-.gitgnore
-CLAUDE.md
-plan.md
-report_*.md
-example.md
-release_notes.md
-__pycache__
