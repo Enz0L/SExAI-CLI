@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SExAI Report - 2026-01-15 22:19</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            background: #1d3557;
+            color: #f1faee;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #f1faee;
+            font-weight: 300;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: #457b9d;
+            padding: 24px;
+            border-radius: 16px;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover { transform: translateY(-4px); }
+        .stat-card h3 { color: #f1faee; font-size: 2.5em; font-weight: 600; }
+        .stat-card p { color: #a8dadc; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.05em; }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(69, 123, 157, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        th {
+            background: #457b9d;
+            color: #f1faee;
+            padding: 16px;
+            text-align: left;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.05em;
+        }
+        td {
+            padding: 16px;
+            border-bottom: 1px solid rgba(168, 218, 220, 0.1);
+        }
+        tr:hover { background: rgba(69, 123, 157, 0.4); }
+        a { color: #a8dadc; text-decoration: none; }
+        a:hover { color: #f1faee; }
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .low { background: #a8dadc; color: #1d3557; }
+        .medium { background: #457b9d; color: #f1faee; }
+        .high { background: #e63946; color: #f1faee; }
+        .critical { background: #e63946; color: #f1faee; animation: pulse 2s infinite; }
+        .unknown { background: rgba(168, 218, 220, 0.3); color: #f1faee; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .risk-critical { background: rgba(230, 57, 70, 0.15); }
+        .risk-high { background: rgba(230, 57, 70, 0.1); }
+        footer { margin-top: 40px; color: #457b9d; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+    <h1>SExAI - Threat Intelligence Report</h1>
+
+    <div class="stats">
+        <div class="stat-card">
+            <h3>5</h3>
+            <p>Total Hosts</p>
+        </div>
+        <div class="stat-card">
+            <h3>0</h3>
+            <p>Critical</p>
+        </div>
+        <div class="stat-card">
+            <h3>0</h3>
+            <p>High Risk</p>
+        </div>
+        <div class="stat-card">
+            <h3>1</h3>
+            <p>Countries</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>Port</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Location</th>
+                <th>DNS Reverse</th>
+                <th>Risk</th>
+                <th>Threat Type</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        <tr class="risk-medium">
+            <td>43.143.130.124</td>
+            <td>8888</td>
+            <td><a href="http://43.143.130.124:8888" target="_blank">http://43.143.130.124:8888</a></td>
+            <td>200</td>
+            <td> ()</td>
+            <td>None</td>
+            <td><span class="badge medium">MEDIUM</span></td>
+            <td>Malware</td>
+            <td>The HTTP response indicates the presence of a malicious login page for a potentially backdoor or malware server, suggesting that it could be used for command and control.</td>
+        </tr>
+        <tr class="risk-medium">
+            <td>129.226.213.170</td>
+            <td>8888</td>
+            <td><a href="http://129.226.213.170:8888" target="_blank">http://129.226.213.170:8888</a></td>
+            <td>200</td>
+            <td> ()</td>
+            <td>None</td>
+            <td><span class="badge medium">MEDIUM</span></td>
+            <td>Malware</td>
+            <td>The HTTP response indicates a login page for an unknown application named 'Supershell', which could be used for C2 communication or malware control. The presence of local static resources suggests the server is likely hosting malicious software.</td>
+        </tr>
+        <tr class="risk-medium">
+            <td>8.216.84.159</td>
+            <td>8888</td>
+            <td><a href="http://8.216.84.159:8888" target="_blank">http://8.216.84.159:8888</a></td>
+            <td>200</td>
+            <td> ()</td>
+            <td>None</td>
+            <td><span class="badge medium">MEDIUM</span></td>
+            <td>C2</td>
+            <td>The HTTP response contains a default page for a potential C2 server named 'Supershell', which suggests malicious activity. The presence of hardcoded credentials fields and JavaScript functions like login() indicate an attempt to establish a backdoor.</td>
+        </tr>
+        <tr class="risk-medium">
+            <td>107.174.115.101</td>
+            <td>8888</td>
+            <td><a href="http://107.174.115.101:8888" target="_blank">http://107.174.115.101:8888</a></td>
+            <td>200</td>
+            <td> ()</td>
+            <td>None</td>
+            <td><span class="badge medium">MEDIUM</span></td>
+            <td>Malware</td>
+            <td>The target is hosting a malicious login page for what appears to be a backdoor (Supershell). The page suggests potential C2 communication via HTTP/HTTPS, with no indication of encryption.</td>
+        </tr>
+        <tr class="risk-medium">
+            <td>81.68.98.217</td>
+            <td>8888</td>
+            <td><a href="http://81.68.98.217:8888" target="_blank">http://81.68.98.217:8888</a></td>
+            <td>200</td>
+            <td> ()</td>
+            <td>None</td>
+            <td><span class="badge medium">MEDIUM</span></td>
+            <td>C2</td>
+            <td>The HTTP response indicates a web-based C2 server with default login page elements, potentially used for remote code execution or data exfiltration. The presence of specific file paths suggests the presence of a malicious application that relies on standard web assets.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <footer>Generated by SExAI on 2026-01-15 22:19:46</footer>
+</body>
+</html>
